@@ -6,15 +6,15 @@ function OrderSummary() {
     const count = useStore((s) => s.count)
     const TotalPrice = useStore((s) => s.TotalPrice)
     let contPrice = 0
-    const addPrice = useStore((s) => s.addPrice)
-    useEffect(() => {
-        for (let item of carts) {
-            console.log(item.price);
-            contPrice += item.price
-        }
-        console.log(contPrice);
-        addPrice(contPrice)
-    }, [])
+    // const addPrice = useStore((s) => s.addPrice)
+    // useEffect(() => {
+    //     for (let item of carts) {
+    //         console.log(item.price);
+    //         contPrice += item.price
+    //     }
+    //     console.log(contPrice);
+    //     incPrice(contPrice)
+    // }, [])
 
 
     return (

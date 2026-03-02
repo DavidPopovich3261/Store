@@ -24,5 +24,7 @@ export const useStore = create((set, get) => ({
     removeCart: (item) => set((state) => ({ carts: (state.carts).filter((i) => i.id != item.id) })),
     inc: () => set((state) => ({ count: state.count + 1 })),
     dnc: () => set((state) => ({ count: state.count - 1 })),
-    addPrice: (Price) => set(() => ({ TotalPrice: Price }))
+    incPrice: (Price) => set((state) => ({ TotalPrice: state.TotalPrice + Price })),
+    dncPrice: (Price) => set((state) => ({ TotalPrice: state.TotalPrice - Price }))
+
 }))

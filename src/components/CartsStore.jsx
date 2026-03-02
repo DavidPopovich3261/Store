@@ -8,7 +8,9 @@ function CartsStore() {
     const removeCart = useStore((s) => s.removeCart)
     const inc = useStore((s) => s.inc)
     const dnc = useStore((s) => s.dnc)
-    const addPrice = useStore((s) => s.addPrice)
+    const incPrice = useStore((s) => s.incPrice)
+    const dncPrice = useStore((s) => s.dncPrice)
+
     return (
         <div>
             {cartStore.map((item) => {
@@ -20,11 +22,13 @@ function CartsStore() {
                                 item.incart = true
                                 addCart(item)
                                 inc()
+                                incPrice(item.price)
                             }
                             else {
                                 item.incart = false
                                 removeCart(item)
                                 dnc()
+                                dncPrice(item.price)
                             }
                         }}>  {!item.incart ? "Add to cart" : "remove"}</button>
                     </div>

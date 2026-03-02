@@ -5,6 +5,8 @@ function CartCart() {
     const carts = useStore((s) => s.carts)
     const removeCart = useStore((s) => s.removeCart)
     const dnc = useStore((s) => s.dnc)
+    const dncPrice = useStore((s) => s.dncPrice)
+
     return (
         <div>
             {carts[0] ? carts.map((item, i) => {
@@ -15,6 +17,8 @@ function CartCart() {
                             item.incart = false
                             removeCart(item)
                             dnc()
+                            dncPrice(item.price)
+
                         }}> remove</button>
                     </div>
                 )
